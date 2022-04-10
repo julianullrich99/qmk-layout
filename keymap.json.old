@@ -63,7 +63,7 @@
       "KC_RPRN",
       "KC_MINS",
       "KC_COLN",
-      "KC_HASH",
+      "UC(0x00DF)",
       "KC_DLR",
       "KC_PIPE",
       "KC_TILD",
