@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           UC(0x00DF), KC_DLR, KC_PIPE, KC_TILD, KC_GRV,
           KC_PLUS, KC_PERC, KC_DQUO, KC_QUOT, KC_SCLN,
           
-          KC_LSFT, KC_BSPC, KC_NO, KC_NO
+          KC_BSPC, KC_LSFT, KC_NO, KC_NO
         ),
         [2] = LAYOUT_split_3x5_2(
           KC_ESC, KC_UNDS, KC_PGDN, KC_PGUP, KC_CIRC,
