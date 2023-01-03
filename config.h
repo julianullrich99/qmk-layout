@@ -41,6 +41,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define COMBO_COUNT 4
 
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
 // Underglow configuration
 #ifdef RGBLIGHT_ENABLE
   #define RGBLIGHT_ANIMATIONS
