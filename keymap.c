@@ -26,10 +26,14 @@ enum custom_keys {
 
 const uint16_t PROGMEM number_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM controls_combo[] = {KC_U, KC_O, COMBO_END};
+const uint16_t PROGMEM enter_combo[] = {KC_M, KC_COMM, COMBO_END};
+const uint16_t PROGMEM esc_combo[] = {KC_C, KC_V, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(number_combo, TO(_NUMBERS)),
-  COMBO(controls_combo, TO(_CONTROLS))
+  COMBO(controls_combo, TO(_CONTROLS)),
+  COMBO(enter_combo, KC_ENT),
+  COMBO(esc_combo, KC_ESC),
 };
 
 
@@ -121,9 +125,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case EXTRAS_ENTER_BACK_TO_TRANSPARENT:
           if (record->event.pressed) {
-            SEND_STRING(SS_TAP(X_ENT));
             layer_move(_TRANSPARENT);
             unregister_code(KC_CAPS);
+            SEND_STRING(SS_DOWN(X_ENT) SS_DELAY(100) SS_UP(X_ENT));
           }
           return false;
 
