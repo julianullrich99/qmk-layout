@@ -28,12 +28,18 @@ const uint16_t PROGMEM number_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM controls_combo[] = {KC_U, KC_O, COMBO_END};
 const uint16_t PROGMEM enter_combo[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM tap_combo[] = {KC_W, KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM layer_control_combo[] = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM layer_number_combo[] = {KC_E, KC_R, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(number_combo, TO(_NUMBERS)),
   COMBO(controls_combo, TO(_CONTROLS)),
   COMBO(enter_combo, KC_ENT),
   COMBO(esc_combo, KC_ESC),
+  COMBO(tap_combo, KC_TAB),
+  COMBO(layer_control_combo, MO(_CONTROLS)),
+  COMBO(layer_number_combo, MO(_NUMBERS)),
 };
 
 

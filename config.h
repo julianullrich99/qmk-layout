@@ -39,7 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAP_CODE_DELAY 20
 
-#define COMBO_COUNT 4
+#define COMBO_COUNT 6
 
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
