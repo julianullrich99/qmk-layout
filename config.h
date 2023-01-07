@@ -15,7 +15,11 @@
  */
 
 #pragma once
-#define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
+#define ENABLE_RGB_MATRIX_CYCLE_ALL
+#define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
+// #define RGB_MATRIX_ENABLE
+#define BOOTMAGIC_ENABLE
+
 // Not yet available in `keymap.json` format
 #ifdef RGB_MATRIX_ENABLE
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED
@@ -32,10 +36,4 @@
      // The default is 40
 #    define MOUSEKEY_WHEEL_TIME_TO_MAX 100
 #endif
-/* Top left key on left half */
-#define BOOTMAGIC_LITE_ROW    0
-#define BOOTMAGIC_LITE_COLUMN 0
-/* Top right key on right half */
-#define BOOTMAGIC_LITE_ROW_RIGHT    4
-#define BOOTMAGIC_LITE_COLUMN_RIGHT 4
 
