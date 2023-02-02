@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "keymap_german.h"
 
 /* THIS FILE WAS GENERATED!
  *
@@ -12,6 +13,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LT(0,KC_SCLN):
             if (!record->tap.count && record->event.pressed) {
                 tap_code16(KC_QUOT); // Intercept hold function
+                return false;
+            }
+            return true;
+        case LT(1,KC_D):
+            if (!record->tap.count && record->event.pressed) {
+                tap_code16(DE_Y); // Intercept hold function
+                return false;
+            }
+            return true;
+        case LT(1,DE_COLN):
+            if (!record->tap.count && record->event.pressed) {
+                tap_code16(DE_AT); // Intercept hold function
                 return false;
             }
             return true;
@@ -41,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [1] = LAYOUT_split_3x5_2(
       KC_GRV, KC_NO, KC_PAGE_UP, KC_PAGE_DOWN, KC_NO, KC_LCTL, KC_7, KC_8, KC_9, KC_LBRC,
       KC_NO, KC_NO, KC_PPLS, KC_PMNS, KC_NO, KC_COMM, KC_4, KC_5, KC_6, KC_RBRC,
-      QK_BOOTLOADER, KC_NO, KC_PAST, KC_PSLS, KC_NO, KC_DOT, KC_1, KC_2, KC_3, KC_NO,
+      QK_BOOTLOADER, TO(3), KC_PAST, KC_PSLS, KC_NO, KC_DOT, KC_1, KC_2, KC_3, KC_NO,
 
       KC_BSPC, KC_LSFT, KC_NO, KC_0
       ),
@@ -52,4 +65,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
       KC_NO, KC_NO, KC_LSFT, KC_NO
       ),
+    [3] = LAYOUT_split_3x5_2(
+      KC_X, KC_V, KC_L, KC_C, KC_W, KC_K, KC_H, KC_G, KC_F, KC_Q,
+      KC_U, LALT_T(KC_I), LCTL_T(KC_A), KC_E, KC_O, KC_S, KC_N, LCTL_T(KC_R), LALT_T(KC_T), LT(1, KC_D),
+      LGUI_T(DE_UDIA), DE_ODIA, DE_ADIA, KC_P, DE_Z, KC_B, KC_M, KC_COMM, KC_DOT, KC_J,
+
+      LT(2, KC_BSPC), KC_LSFT, LT(1, KC_SPC), LT(4, KC_ENT)),
+
+    [4] = LAYOUT_split_3x5_2(
+      DE_AT, S(DE_MINS), DE_LBRC, DE_RBRC, KC_GRV, DE_EXLM, DE_LABK, DE_RABK, DE_EQL, DE_AMPR,
+      DE_BSLS, DE_SLSH, DE_LCBR, DE_RCBR, DE_ASTR, DE_QUES, DE_LPRN, DE_RPRN, DE_MINS, LT(1, DE_COLN),
+      DE_HASH, DE_DLR, DE_PIPE, DE_TILD, DE_GRV, DE_PLUS, DE_PERC, DE_DQUO, DE_QUOT, DE_SCLN,
+
+      LT(2, KC_BSPC), KC_LSFT, LT(1, KC_SPC), RSFT_T(KC_ENT)),
 };
